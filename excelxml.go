@@ -67,7 +67,9 @@ func SliceXML(r io.Reader) (*Workbook, error) {
 			if err == io.EOF {
 				break
 			}
-			return nil, &Error{"SliceXML", "getToken", err}
+			// old err testing this one &Error{"SliceXML", "getToken", err}
+			return nil, &Error{"SliceXML", "geting tokens", errors.New("file is not an excel xml file")}
+			
 		}
 
 		if t == nil {
