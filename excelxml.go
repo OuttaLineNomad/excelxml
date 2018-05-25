@@ -69,12 +69,9 @@ func SliceXML(r io.Reader) (*Workbook, error) {
 			}
 			// old err testing this one &Error{"SliceXML", "getToken", err}
 			return nil, &Error{"SliceXML", "geting tokens", errors.New("file is not an excel xml file")}
-			
-		}
-
-		if t == nil {
 
 		}
+
 		switch ty := t.(type) {
 		case xml.StartElement:
 			if ty.Name.Local == "Worksheet" {
